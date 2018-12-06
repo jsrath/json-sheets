@@ -12,6 +12,8 @@
   "engines": {
     "node": "8.x"
   },
-  "start": "node app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "license": "MIT"
 }
