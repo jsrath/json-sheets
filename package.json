@@ -1,0 +1,13 @@
+{
+  "name": "sheets-json",
+  "version": "1.0.0",
+  "description": "Sheets JSON",
+  "main": "app.js",
+  "author": "jsrath",
+  "dependencies": {
+    "body-parser": "^1.x.x",
+    "express": "^4.x.x",
+    "request": "^2.69.0"
+  },
+  "license": "MIT"
+}
