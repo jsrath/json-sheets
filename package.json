@@ -9,5 +9,9 @@
     "express": "^4.x.x",
     "request": "^2.69.0"
   },
+  "engines": {
+    "node": "8.x"
+  },
+  "start": "node app.js",
   "license": "MIT"
 }
