@@ -13,6 +13,10 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
 app.get('/api', (req, res) => {
   const id = req.query.id;
   const sheet = req.query.sheet || 1;
