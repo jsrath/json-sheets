@@ -2,6 +2,7 @@ body {
   background: linear-gradient(to left, #76b852, #8DC26F);
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+  margin: 0;
 }
 
 h1 {
@@ -51,4 +52,16 @@ h1 {
 
 .form input[type="submit"]:hover, .form input[type="submit"]:active, .form input[type="submit"]:focus {
   background: #43A047;
+}
+
+.error {
+  color: #fff;
+  font-weight: 400;
+  background-color: #C3423F;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin: 0;
 }
