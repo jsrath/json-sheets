@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5005;
 const request = require('request');
 
 app.use((req, res, next) => {
@@ -12,13 +12,21 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
 app.use(express.static('public'));
 
 app.get('/api', (req, res) => {
   const id = req.query.id;
   const sheet = req.query.sheet || 1;
   const url = `https://spreadsheets.google.com/feeds/list/${id}/${sheet}/public/values?alt=json`;
+
+  request(url, (error, response) => {
+    const isJsonResponse = response.headers['content-type'].includes('application/json');
+    if (!error && isJsonResponse && response.statusCode === 200) {
+      processRequest(response);
+    } else {
+      handleError(error, response);
+    }
+  });
 
   function processRequest(response) {
     const sheet = JSON.parse(response.body);
@@ -34,16 +42,10 @@ app.get('/api', (req, res) => {
   }
 
   function handleError(error) {
-    return res.status(response.statusCode).json(error);
+    return error
+      ? res.status(response.statusCode).json(error)
+      : res.status(400).sendFile('public/error.html', { root: __dirname });
   }
-
-  request(url, (error, response) => {
-    if (!error && response.statusCode === 200) {
-      processRequest(response);
-    } else {
-      handleError(error);
-    }
-  });
 });
 
 app.use((err, req, res, next) => {
