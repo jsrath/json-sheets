@@ -5,19 +5,28 @@ body {
   margin: 0;
 }
 
-h1 {
+.container {
   color: #fff;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
   font-size: 28px;
   font-weight: 300;
-  margin-top: 100px;
+  margin: 50px 0 0;
+}
+.subtitle {
+  margin-bottom: 20px;
 }
 
 .form {
   background: #fff;
-  max-width: 360px;
-  margin: 30px auto;
-  padding: 45px;
+  width: 450px;
+  margin: 10px 0 20px;
+  padding: 40px 30px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -30,7 +39,7 @@ h1 {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 90%;
+  width: 80%;
   margin-bottom: 15px;
   padding: 15px;
   font-size: 14px;
@@ -41,17 +50,32 @@ h1 {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   background: #4CAF50;
-  width: 100%;
   padding: 15px;
   border: none;
   color: #FFFFFF;
   font-size: 14px;
   transition: all 0.3 ease;
   cursor: pointer;
+  width: 40%;
+  margin-top: 15px;
 }
 
 .form input[type="submit"]:hover, .form input[type="submit"]:active, .form input[type="submit"]:focus {
   background: #43A047;
+}
+
+.id-helper {
+  background-color: #fff;
+  color: #333;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.highlight {
+  color: red;
+  border: 2px solid red;
+  padding: 5px 0;
+  font-weight: 700;
 }
 
 .error {

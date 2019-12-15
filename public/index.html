@@ -11,12 +11,17 @@
 </head>
 
 <body>
-  <h1>JSON Sheets</h1>
-  <form class="form" action="/api">
-    <input type="text" placeholder="Google Sheets ID" name="id">
-    <input type="number" placeholder="Sheet Number" name="sheet">
-    <input type="submit" value="get json">
-  </form>
+  <div class="container">
+    <h1>JSON Sheets</h1>
+    <p class="subtitle">Generate a JSON API from a Google Sheet</p>
+    <form class="form" action="/api">
+      <input type="text" placeholder="Google Sheet ID" name="id">
+      <input type="number" placeholder="Sheet Number" name="sheet">
+      <input type="submit" value="Generate API">
+    </form>
+    <p>Find Your Google Sheet ID</p>
+    <p class="id-helper">https://docs.google.com/spreadsheets/d/<span class="highlight">1fxnlWPPZiLQNxsD4BkiQ1Lx7RK315ECbkk95LoyP4LA</span>/edit#gid=711250388</p>
+  </div>
 </body>
 
 </html>
