@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="JSON Sheets Screenshot" src="./screenshot.jpg" width="400" />
+  <img alt="JSON Sheets Screenshot" src="./screenshot.jpg" width="800" />
 </p>
 <p align="center">
   <a href="#">
